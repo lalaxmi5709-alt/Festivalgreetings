@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Festival Wishes</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#b30000,#ff3d00,#ff9800);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+padding:20px;
+overflow-x:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.title{
+text-align:center;
+color:#fff;
+font-size:34px;
+font-weight:bold;
+margin:15px 0 20px;
+text-shadow:0 0 15px #fff;
+}
+
+.search{
+width:100%;
+padding:16px 22px;
+border:none;
+border-radius:50px;
+font-size:18px;
+outline:none;
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(12px);
+color:#fff;
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+margin-bottom:25px;
+}
+
+.search::placeholder{
+color:#eee;
+}
+
+.list{
+display:grid;
+gap:15px;
+}
+
+.item{
+display:block;
+padding:18px;
+text-decoration:none;
+font-size:19px;
+font-weight:bold;
+color:#fff;
+border-radius:20px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.25);
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+transition:.3s;
+}
+
+.item:hover{
+transform:translateY(-5px) scale(1.03);
+background:rgba(255,255,255,.25);
+}
+
+.dot{
+position:fixed;
+width:8px;
+height:8px;
+background:white;
+border-radius:50%;
+opacity:.6;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{opacity:.8;}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="title">🎉 Festival Wishes 2026 🎉</div>
+
+<input class="search" id="search" placeholder="🔍 Search Festival..." onkeyup="findFestival()">
+
+<div class="list" id="list">
+
+<a class="item" href="new-year.html">🎆 New Year</a>
+<a class="item" href="makar-sankranti.html">🪁 Makar Sankranti</a>
+<a class="item" href="vasant-panchami.html">🌼 Vasant Panchami</a>
+<a class="item" href="republic-day.html">🇮🇳 Republic Day</a>
+<a class="item" href="maha-shivaratri.html">🔱 Maha Shivaratri</a>
+<a class="item" href="holika-dahan.html">🔥 Holika Dahan</a>
+<a class="item" href="holi.html">🎨 Holi</a>
+<a class="item" href="ram-navami.html">🏹 Ram Navami</a>
+<a class="item" href="hanuman-jayanti.html">🐒 Hanuman Jayanti</a>
+<a class="item" href="hindi-new-year.html">📅 Hindi New Year</a>
+<a class="item" href="baishakhi.html">🌾 Baishakhi</a>
+<a class="item" href="jagannath-rath-yatra.html">🚩 Jagannath Rath Yatra</a>
+<a class="item" href="guru-purnima.html">🙏 Guru Purnima</a>
+<a class="item" href="independence-day.html">🇮🇳 Independence Day</a>
+<a class="item" href="nag-panchami.html">🐍 Nag Panchami</a>
+<a class="item" href="raksha-bandhan.html">🎁 Raksha Bandhan</a>
+<a class="item" href="janmashtami.html">🦚 Janmashtami</a>
+<a class="item" href="ganesh-chaturthi.html">🐘 Ganesh Chaturthi</a>
+<a class="item" href="gandhi-jayanti.html">🕊 Gandhi Jayanti</a>
+<a class="item" href="navratri.html">💃 Navratri</a>
+<a class="item" href="durga-ashtami.html">🌺 Durga Ashtami</a>
+<a class="item" href="dussehra.html">🏹 Dussehra</a>
+<a class="item" href="karva-chauth.html">🌙 Karva Chauth</a>
+<a class="item" href="dhanteras.html">🪙 Dhanteras</a>
+<a class="item" href="diwali.html">🪔 Diwali</a>
+<a class="item" href="govardhan-puja.html">⛰ Govardhan Puja</a>
+<a class="item" href="bhai-dooj.html">❤️ Bhai Dooj</a>
+<a class="item" href="chhath-puja.html">☀ Chhath Puja</a>
+<a class="item" href="christmas.html">🎄 Merry Christmas</a>
+
+</div>
+
+<script>
+function findFestival(){
+let input=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".item").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(input)?"block":"none";
+});
+}
+
+for(let i=0;i<35;i++){
+let d=document.createElement("div");
+d.className="dot";
+d.style.left=Math.random()*100+"%";
+d.style.animationDuration=(5+Math.random()*8)+"s";
+d.style.animationDelay=Math.random()*8+"s";
+document.body.appendChild(d);
+}
+</script>
+
+</body>
+</html>
